@@ -111,6 +111,7 @@ ul {
   /* background-color: pink; */
   padding-left: 180px;
   padding-top: 50px;
+  /* overflow: hidden; */
   transition: all 1s;
 }
 .lt_main.hidemenu {

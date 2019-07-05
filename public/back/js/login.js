@@ -2,7 +2,7 @@
  * Created by Jepson on 2018/8/18.
  */
 
-$(function () {
+$(function() {
   /*
    * 1. 进行表单校验配置
    *    校验要求:
@@ -70,7 +70,7 @@ $(function () {
   * */
 
   // 注册表单校验成功事件
-  $('#form').on("success.form.bv", function (e) {
+  $('#form').on("success.form.bv", function( e ) {
     // 阻止默认的表单提交
     e.preventDefault();
 
@@ -82,14 +82,14 @@ $(function () {
       url: "/employee/employeeLogin",
       data: $('#form').serialize(),
       dataType: "json",
-      success: function (info) {
-        console.log(info);
-        if (info.success) {
+      success: function( info ) {
+        console.log( info );
+        if ( info.success ) {
           // 登录成功, 跳转到首页
           location.href = "index.html";
         }
 
-        if (info.error === 1000) {
+        if ( info.error === 1000 ) {
           //alert("当前用户名不存在");
           // updateStatus 更新校验状态
           // 1. 字段名称
@@ -98,7 +98,7 @@ $(function () {
           $('#form').data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
         }
 
-        if (info.error === 1001) {
+        if ( info.error === 1001 ) {
           //alert("密码错误");
 
           $('#form').data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
@@ -113,7 +113,7 @@ $(function () {
   /*
   * 3. 重置功能
   * */
-  $('[type="reset"]').click(function () {
+  $('[type="reset"]').click(function() {
     // 调用插件的方法, 进行重置校验状态
     // resetForm(boolean),
     // 1. 传true, 重置内容以及校验状态
